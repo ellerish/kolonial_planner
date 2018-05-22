@@ -4,6 +4,7 @@ import {Items} from "../../models/Items";
 import {AngularFirestore, AngularFirestoreCollection} from "angularfire2/firestore";
 import {Observable} from "rxjs/Observable";
 import {Varer} from "../../models/Varer";
+import {HomePage} from "../home/home";
 
 /**
  * Generated class for the DetailPage page.
@@ -38,4 +39,20 @@ export class DetailPage {
     console.log('ionViewDidLoad DetailPage');
   }
 
+
+  goToMakeList(){
+    this.navCtrl.push('FriendListPage')
+  }
+
+  goToHome(){
+    this.navCtrl.push(HomePage);
+  }
+
+  goToBasket(){
+    this.navCtrl.push('BasketPage');
+  }
+
+  goToProfil(){
+    this.navCtrl.push('ProfilPage');
+  }
 }

@@ -1,19 +1,16 @@
-<!--
-  Generated template for the DetailPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>detail</ion-title>
+    <ion-buttons end>
+      <button icon-only ion-button (click)="logout()">
+        <ion-icon name="exit"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
+  <ion-searchbar (ionInput)="text" placeholder="Søk i tusenvis av varer "></ion-searchbar>
+
   {{vare.body}}
 
   <ion-list>
@@ -22,9 +19,22 @@
         <img [src]="detail.img">
       </ion-thumbnail>
       <h2>{{detail.name}}</h2>
-      <p>{{detail.size}} • {{detail.price}}</p>
-      <button ion-button clear item-end><ion-icon name="cart"></ion-icon></button>
+      <p> Pris {{detail.price}} kr</p>
+      <p>{{detail.size}}</p>
+      <button ion-button clear item-end class="btnBasket"><ion-icon name="cart"></ion-icon></button>
     </ion-item>
   </ion-list>
 
 </ion-content>
+
+<ion-footer>
+
+  <ion-toolbar>
+    <ion-segment>
+      <ion-segment-button (click)="goToHome()"><ion-icon name="home"></ion-icon> </ion-segment-button>
+      <ion-segment-button (click)="goToMakeList()"><ion-icon name="create"></ion-icon></ion-segment-button>
+      <ion-segment-button (click)="goToBasket()"><ion-icon name="cart"></ion-icon></ion-segment-button>
+      <ion-segment-button (click)="goToProfil()"><ion-icon name="contact"></ion-icon></ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-footer>
