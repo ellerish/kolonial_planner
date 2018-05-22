@@ -14,16 +14,16 @@
 
 
 <ion-content padding>
-
+  {{vare.body}}
 
   <ion-list>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="https://www.matoppskrift.no/bilder/bilder_1000/14526.jpg">
+    <ion-item *ngFor="let detail of details | async">
+      <ion-thumbnail item-start class="productView">
+        <img [src]="detail.img">
       </ion-thumbnail>
-      <h2>Tortills Chips</h2>
-      <p>Maarud • 170 g • 39,9</p>
-      <button ion-button clear item-end><ion-icon name="basket"></ion-icon></button>
+      <h2>{{detail.name}}</h2>
+      <p>{{detail.size}} • {{detail.price}}</p>
+      <button ion-button clear item-end><ion-icon name="cart"></ion-icon></button>
     </ion-item>
   </ion-list>
 

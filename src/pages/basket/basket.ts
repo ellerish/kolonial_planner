@@ -48,7 +48,7 @@ export class BasketPage {
   goToDetailPage(vare: Varer) {
     this.navCtrl.push('DetailPage', {
       vare,
-      collection: this.collection
+      vareCollection: this.collection
     })
   }
 

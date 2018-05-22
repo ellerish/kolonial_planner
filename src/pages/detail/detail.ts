@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Items} from "../../models/Items";
+import {AngularFirestore, AngularFirestoreCollection} from "angularfire2/firestore";
+import {Observable} from "rxjs/Observable";
+import {Varer} from "../../models/Varer";
 
 /**
  * Generated class for the DetailPage page.
@@ -15,7 +19,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DetailPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public vare: Varer;
+  public vareCollection: AngularFirestoreCollection<Varer>;
+  public details: Observable<any[]>;
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private af: AngularFirestore) {
+    this.vare = navParams.get('vare');
+    this.vareCollection = navParams.get('vareCollection');
+
+    this.details = this.vareCollection.doc(this.vare.id).collection("details").valueChanges();
+
+   // doc(this.vare.id).collection('Detail').valueChanges();
+
   }
 
   ionViewDidLoad() {
