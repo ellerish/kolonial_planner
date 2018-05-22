@@ -8,7 +8,21 @@ import { NavController } from 'ionic-angular';
 export class HomePage {
 
   constructor(public navCtrl: NavController) {
+    this.navCtrl = navCtrl;
 
   }
 
+
+
+  goToMakeList(){
+    this.navCtrl.push('FriendListPage')
+  }
+
+  goToHome(){
+    this.navCtrl.push(HomePage);
+  }
+
+  goToBasket(){
+    this.navCtrl.push('BasketPage')
+  }
 }

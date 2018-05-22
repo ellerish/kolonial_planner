@@ -1,0 +1,25 @@
+
+<ion-content padding>
+
+
+  <ion-card class="container">
+    <section>
+      <section>
+        <h1 class="login-title"></h1>
+      </section>
+      <section>
+        <ion-label fixed>Username</ion-label>
+        <ion-input class="text-input-field" type="text" [(ngModel)]="user.username"></ion-input>
+      </section>
+      <section>
+        <ion-label fixed>Password</ion-label>
+        <ion-input  class="text-input-field" type="password" [(ngModel)]="user.password"></ion-input>
+      </section>
+      <section>
+        <button class="loginButtons" block ion-button (click)="loginUser()">Logg inn</button>
+        <button class="loginButtons" block ion-button (click)="registerUser()">Registrer</button>
+      </section>
+    </section>
+  </ion-card>
+
+</ion-content>
