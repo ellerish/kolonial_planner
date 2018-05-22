@@ -25,4 +25,8 @@ export class HomePage {
   goToBasket(){
     this.navCtrl.push('BasketPage')
   }
+
+  goToProfil(){
+    this.navCtrl.push('ProfilPage');
+  }
 }

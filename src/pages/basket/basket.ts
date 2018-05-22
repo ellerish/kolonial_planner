@@ -65,7 +65,7 @@ export class BasketPage {
   }
 
   goToProfil(){
-    this.navCtrl.push(ProfilPage);
+    this.navCtrl.push('ProfilPage');
   }
 
 }
