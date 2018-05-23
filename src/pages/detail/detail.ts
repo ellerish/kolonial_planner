@@ -35,6 +35,7 @@ export class DetailPage {
 
   }
 
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailPage');
   }
