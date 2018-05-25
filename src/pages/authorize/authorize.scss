@@ -1,9 +1,16 @@
 page-authorize {
 
   ion-content{
-   // background: url("https://kolonial.no/static/img/og-1200x630.f2845d3eec83.jpg");
-    // background-size: cover;
-   background-color: orange;
+    background: url("https://kolonial.no/static/img/og-1200x630.f2845d3eec83.jpg");
+     background-size: cover;
+   //background-color: orange;
+  }
+
+  .frontTitle{
+    color: #F6F6F6;
+    font-family: "GT Walsheim Medium Oblique", sans-serif;
+    size: 20px;
+    text-align: center;
   }
 
   .container{
@@ -20,12 +27,22 @@ page-authorize {
     border: 2px solid #F6F6F6;
     border-radius: 3px;
     box-shadow: 0 2px 1px 0 rgba(0,0,0,0.14);
+    font-family: "GT Walsheim Medium", sans-serif;
+
   }
 
   .loginButtons{
-    background: rgba(255,255,255,0.85);
+    background: #FFA51E;
     box-shadow: 0 2px 1px 0 rgba(0,0,0,0.14);
-    color: #000;
+    color: #F6F6F6;
+    font-family: "GT Walsheim Medium", sans-serif;
+  }
+
+  .registerButtons{
+    background: #FFA51E;
+    box-shadow: 0 2px 1px 0 rgba(0,0,0,0.14);
+    color: #F6F6F6;
+    font-family: "GT Walsheim Medium", sans-serif;
   }
 
 }
