@@ -5,13 +5,12 @@
         <ion-icon name="exit"></ion-icon>
       </button>
     </ion-buttons>
+    {{vare.body}}
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-searchbar (ionInput)="text" placeholder="Søk i tusenvis av varer "></ion-searchbar>
-
-  {{vare.body}}
 
   <ion-list>
     <ion-item *ngFor="let detail of details | async">
@@ -31,6 +30,7 @@
 </ion-content>
 
 <ion-footer>
+  <ion-item ><ion-icon name="cart" class="fotText"></ion-icon> Handlekurven er tom</ion-item>
 
   <ion-toolbar>
     <ion-segment>
