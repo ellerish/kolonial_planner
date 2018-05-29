@@ -1,9 +1,15 @@
 page-authorize {
 
   ion-content{
-    background: url("https://kolonial.no/static/img/og-1200x630.f2845d3eec83.jpg");
+  //  background: url("https://kolonial.no/static/img/og-1200x630.f2845d3eec83.jpg");
      background-size: cover;
+    background-image: url("../../assets/imgs/kolo-forside.jpg");
+  //  transform: rotate(180deg);
    //background-color: orange;
+  }
+
+  .topText{
+    margin-top: 30px;
   }
 
   .frontTitle{
@@ -11,13 +17,16 @@ page-authorize {
     font-family: "GT Walsheim Medium Oblique", sans-serif;
     size: 20px;
     text-align: center;
+
   }
 
   .container{
+    background: #FFA51E;
     width: 80%;
-    height: 45%;
+    height: 28%;
     margin: auto;
     position: absolute;
+    margin-top: 200px;
     top: 0; left: 0; bottom: 0; right: 0;
   }
 
@@ -25,10 +34,18 @@ page-authorize {
     background: rgba(255,255,255,0.85);
     padding: 5px;
     border: 2px solid #F6F6F6;
-    border-radius: 3px;
+    border-radius: 1px;
     box-shadow: 0 2px 1px 0 rgba(0,0,0,0.14);
     font-family: "GT Walsheim Medium", sans-serif;
 
+  }
+
+  .buttonsLogin{
+    width: 80%;
+    height: 0;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: -20%; right: 0;
   }
 
   .loginButtons{

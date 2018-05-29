@@ -1,9 +1,9 @@
 
 <ion-content padding>
-
+  <div class="topText">
   <img src="../../assets/logo/Logo_Kolonial_Horisontal_Fullfarge_Negativ.png"/>
   <div class="frontTitle">Din nye matbutikk, rett i lomma</div>
-
+  </div>
 
   <ion-card class="container">
     <section>
@@ -18,10 +18,13 @@
         <ion-label fixed>Passord</ion-label>
         <ion-input  class="text-input-field" type="password" [(ngModel)]="user.password"></ion-input>
       </section>
-      <section>
-        <button class="loginButtons" block ion-button (click)="loginUser()">Logg inn</button>
-        <button class="registerButtons" block ion-button (click)="registerUser()">Lag ny konto</button>
-      </section>
+    </section>
+  </ion-card>
+
+  <ion-card>
+    <section class="buttonsLogin">
+      <button class="loginButtons" block ion-button (click)="loginUser()">Logg inn</button>
+      <button class="registerButtons" block ion-button (click)="registerUser()">Lag ny konto</button>
     </section>
   </ion-card>
 
