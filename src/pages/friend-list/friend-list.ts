@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {UserProvider} from "../../providers/user/user";
 import {HomePage} from "../home/home";
+import {BasketPage} from "../basket/basket";
 
 /**
  * Generated class for the FriendListPage page.
@@ -21,9 +22,11 @@ export class FriendListPage {
   public form: FormGroup;
   public owner: any;
 
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder : FormBuilder,
               private userProvider : UserProvider) {
     this.navCtrl = navCtrl;
+
 
     this.form = this.formBuilder.group({
       name: ['', Validators.required],
@@ -57,6 +60,10 @@ export class FriendListPage {
     console.log('ionViewDidLoad FriendListPage');
   }
 
+  goToBasketList() {
+    this.navCtrl.push(BasketPage)
+  }
+
   goToMakeList(){
     this.navCtrl.push('FriendListPage')
   }
@@ -69,7 +76,10 @@ export class FriendListPage {
     this.navCtrl.push('BasketPage');
   }
 
-  goToProfil(){
-    this.navCtrl.push('ProfilPage');
+  goToProfil(nameBasket) {
+    this.navCtrl.push('ProfilPage', {
+      data: nameBasket
+    });
   }
+
 }

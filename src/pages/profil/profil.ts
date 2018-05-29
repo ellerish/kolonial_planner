@@ -16,9 +16,11 @@ import {AngularFirestore} from "angularfire2/firestore";
   templateUrl: 'profil.html',
 })
 export class ProfilPage {
+  nameBasket: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private  af: AngularFirestore) {
     this.navCtrl = navCtrl;
+    this.nameBasket = navParams.get('data');
   }
 
   ionViewDidLoad() {

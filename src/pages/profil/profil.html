@@ -19,14 +19,40 @@
 
 
 <ion-content padding>
-  <h2>Din handlekurv: </h2>
-  <ion-item>
-    <ion-toggle disabled checked="false"></ion-toggle>
+  <ion-item class="item-borderless">
+  <h2>{{nameBasket}}</h2>
   </ion-item>
 
 
+  <ion-list>
+    <ion-item>
+      <ion-checkbox color="dark" checked="false"></ion-checkbox>
+      <ion-thumbnail item-start class="productView">
+        <img [src]="">
+      </ion-thumbnail>
+      <h2>Navn</h2>
+      <p> Pris  kr</p>
+      <p> Details </p>
+      <!-- <button ion-button clear item-end class="btnBasket"><ion-icon name="cart"></ion-icon></button> -->
+      <ion-icon item-right name="remove-circle" (click)="decrement(item)" class="countButtons"></ion-icon>
+      <p item-right>0</p>
+      <ion-icon item-right name="add-circle" (click)="increment(item)" class="countButtons"></ion-icon>
+      <ion-icon item-end name="trash"></ion-icon>
+    </ion-item>
+  </ion-list>
 
-  <p>Send betalingsnotifikasjon </p>
+  <ion-card class="payBox">
+    <ion-card-header>
+    Total sum = Kr 400,-
+    </ion-card-header>
+    <ion-card-content>
+    <p>Poser: 3</p>
+      <p>Varer: 6</p>
+      <p>Din sum: Kr 200,-</p>
+    </ion-card-content>
+  </ion-card>
+  <button ion-button full class="payButton">Til Betaling</button>
+
 </ion-content>
 
 <ion-footer>
