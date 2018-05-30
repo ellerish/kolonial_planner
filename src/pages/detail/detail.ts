@@ -24,13 +24,17 @@ export class DetailPage {
   public vareCollection: AngularFirestoreCollection<Varer>;
   public details: Observable<any[]>;
  // public item: Items;
-  quantity: 0;
+ // quantity: 0;
+
+  qty: any;
   public detailsList;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private af: AngularFirestore) {
     this.vare = navParams.get('vare');
     this.vareCollection = navParams.get('vareCollection');
+
+    this.qty = 1;
 
     this.details = this.vareCollection.doc(this.vare.id).collection("details").valueChanges();
 
@@ -43,15 +47,17 @@ export class DetailPage {
     console.log('ionViewDidLoad DetailPage');
   }
 
-  decrement(vare: any){
-    if(vare.quantity > 0){
-      vare.quantity--;
-    }
+  decrement(qty){
+  if(this.qty-1 < 1){
+    this.qty = 1;
+  } else {
+    this.qty -= 1;
+  }
 
   }
 
-  increment(vare: any){
-    vare.quantity++;
+  increment(qty){
+    this.qty += 1;
   }
 
 

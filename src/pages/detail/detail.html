@@ -21,9 +21,9 @@
       <p> Pris {{detail.price}} kr</p>
       <p>{{detail.size}}</p>
      <!-- <button ion-button clear item-end class="btnBasket"><ion-icon name="cart"></ion-icon></button> -->
-      <ion-icon item-right name="remove-circle" (click)="decrement(vare)" class="countButtons"></ion-icon>
-      <p item-right>0</p>
-      <ion-icon item-right name="add-circle" (click)="increment(vare)" class="countButtons"></ion-icon>
+      <ion-icon item-right name="remove-circle" (click)="decrement(qty)" class="countButtons"></ion-icon>
+      <p item-right>{{qty}}</p>
+      <ion-icon item-right name="add-circle" (click)="increment(qty)" class="countButtons"></ion-icon>
     </ion-item>
   </ion-list>
 
