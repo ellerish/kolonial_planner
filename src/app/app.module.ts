@@ -12,6 +12,7 @@ import {AngularFirestoreModule} from "angularfire2/firestore";
 import env from "./env";
 import {AngularFireModule} from "angularfire2";
 import { UserProvider } from '../providers/user/user';
+import { CartServiceProvider } from '../providers/cart-service/cart-service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { UserProvider } from '../providers/user/user';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UserProvider
+    UserProvider,
+    CartServiceProvider
   ]
 })
 export class AppModule {}
