@@ -1,4 +1,6 @@
 
+<link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC" rel="stylesheet">
+
 <ion-content padding>
     <ion-card class="container">
 
@@ -7,13 +9,14 @@
   [formGroup]="form"
   (ngSubmit)="manage(form.value)">
 
-  <ion-item end>
+  <ion-item end class="email">
     <ion-icon name="cart">
       {{owner}}
     </ion-icon>
   </ion-item>
   <ion-list>
-    <ion-item>
+
+    <ion-item class="navn-handleliste">
       <ion-label floating>Navn på Handlelisten:</ion-label>
       <ion-input formControlName="name" #nameBasket></ion-input>
     </ion-item>
@@ -24,7 +27,7 @@
       icon-left
       clear
       (click)="addNewInputField()">
-               <ion-icon name="add"></ion-icon>
+               <ion-icon name="add" class="plus-btn"></ion-icon>
                Legg til medlemmer
          </span>
 
@@ -32,7 +35,7 @@
 
     <!-- Assign the technologies FormArray to the form
          where we want to track/generate new input track fields -->
-    <div
+    <div 
       formArrayName="friends"
       margin-bottom>
 
@@ -46,7 +49,7 @@
         [formGroupName]="i"
         *ngFor="let friend of form.controls.friends.controls; let i = index">
         <ion-item-group>
-          <ion-item>
+          <ion-item class="add-email">
             <ion-label floating>Epost-Adresse:</ion-label>
             <ion-input
               type="text"
