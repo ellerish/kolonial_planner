@@ -10,8 +10,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class CartServiceProvider {
 
-  constructor(public http: HttpClient) {
-    console.log('Hello CartServiceProvider Provider');
+  constructor() {
+
   }
 
 }
