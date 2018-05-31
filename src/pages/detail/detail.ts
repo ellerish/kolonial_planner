@@ -5,6 +5,9 @@ import {AngularFirestore, AngularFirestoreCollection} from "angularfire2/firesto
 import {Observable} from "rxjs/Observable";
 import {Varer} from "../../models/Varer";
 import {HomePage} from "../home/home";
+import {CartServiceProvider} from "../../providers/cart-service/cart-service";
+
+
 
 /**
  * Generated class for the DetailPage page.
@@ -26,11 +29,13 @@ export class DetailPage {
  // public item: Items;
  // quantity: 0;
 
+  public savedVare: any[];
+
   qty: any;
   public detailsList;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private af: AngularFirestore) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private af: AngularFirestore, private cartService: CartServiceProvider) {
     this.vare = navParams.get('vare');
     this.vareCollection = navParams.get('vareCollection');
 

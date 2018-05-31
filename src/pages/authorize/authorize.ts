@@ -17,6 +17,8 @@ import {AngularFirestore} from "angularfire2/firestore";
 })
 export class AuthorizePage {
 
+
+
   public user = {
     username: "",
     password: ""
