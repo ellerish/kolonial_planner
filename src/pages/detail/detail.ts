@@ -6,6 +6,7 @@ import {Observable} from "rxjs/Observable";
 import {Varer} from "../../models/Varer";
 import {HomePage} from "../home/home";
 import {CartServiceProvider} from "../../providers/cart-service/cart-service";
+import {Product} from "../../models/product";
 
 
 
@@ -29,6 +30,9 @@ export class DetailPage {
  // public item: Items;
  // quantity: 0;
 
+  selectedProduct: Product;
+  cartCount: number=0;
+
   public savedVare: any[];
 
   qty: any;
@@ -43,8 +47,15 @@ export class DetailPage {
 
     this.details = this.vareCollection.doc(this.vare.id).collection("details").valueChanges();
 
+  this.selectedProduct = navParams.get('item');
+
+  }
 
 
+  addToCart(product: Product){
+    this.cartService.addToCart(product);
+    this.cartService.cartCount=this.cartService.cartCount+1;
+    this.cartCount = this.cartService.cartCount;
   }
 
 

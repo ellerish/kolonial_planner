@@ -24,13 +24,16 @@
       <ion-icon item-right name="remove-circle" (click)="decrement(qty)" class="countButtons"></ion-icon>
       <p item-right>{{qty}}</p>
       <ion-icon item-right name="add-circle" (click)="increment(qty)" class="countButtons"></ion-icon>
+      <button ion-button (click)="addToCart(selectedProduct)" >
+        <ion-icon name="basket" ></ion-icon>
+      </button>
     </ion-item>
   </ion-list>
 
 </ion-content>
 
 <ion-footer>
-  <ion-item> <ion-icon name="cart" class="fotText"></ion-icon> Handlekurven er tom
+  <ion-item> <ion-icon name="cart" class="fotText"></ion-icon> Handlekurven {{cartCount}}
   </ion-item>
 
   <ion-toolbar>
