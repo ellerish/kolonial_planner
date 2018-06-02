@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {HomePage} from "../home/home";
 import {AngularFirestore} from "angularfire2/firestore";
+import {CartServiceProvider} from "../../providers/cart-service/cart-service";
+import {CartItem} from "../../models/cart-item";
+
 
 /**
  * Generated class for the ProfilPage page.
@@ -18,13 +21,31 @@ import {AngularFirestore} from "angularfire2/firestore";
 export class ProfilPage {
   nameBasket: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private  af: AngularFirestore) {
+
+//  selectedProduct: Product;
+  cartCount:number=0;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private  af: AngularFirestore, private cartService: CartServiceProvider) {
     this.navCtrl = navCtrl;
     this.nameBasket = navParams.get('data');
+
+
+  //  this.selectedProduct = navParams.get('item');
   }
+
+
+  cartItems:CartItem[]=[];
+
+
+  emptyBasket(){
+    this.cartCount = 0;
+  }
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilPage');
+    this.cartItems=this.cartService.list();
   }
 
 

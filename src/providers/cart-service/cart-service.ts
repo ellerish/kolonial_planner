@@ -21,7 +21,7 @@ export class CartServiceProvider {
     this.cartCount = 0;
   }
 
-  addToCart(product: Product){
+  addToCart(product: Items){
     var addedItem = CART_ITEM_LIST.find(
       t => t.product == product
     );
@@ -33,6 +33,25 @@ export class CartServiceProvider {
       cartItem.quantity = 1;
       CART_ITEM_LIST.push(cartItem);
     }
+  }
+
+  removeFromCart(product: Items) {
+    var addedItem = CART_ITEM_LIST.find(
+      t => t.product == product
+    );
+    var indexNo = CART_ITEM_LIST.indexOf(addedItem);
+
+    if (indexNo != -1) {
+      CART_ITEM_LIST.splice(indexNo, 1);
+    }
+  }
+
+  list(): CartItem[] {
+    return CART_ITEM_LIST;
+  }
+
+  clear() {
+    CART_ITEM_LIST.splice(0, CART_ITEM_LIST.length);
   }
 
 

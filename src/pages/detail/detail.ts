@@ -6,7 +6,8 @@ import {Observable} from "rxjs/Observable";
 import {Varer} from "../../models/Varer";
 import {HomePage} from "../home/home";
 import {CartServiceProvider} from "../../providers/cart-service/cart-service";
-import {Product} from "../../models/product";
+import * as firebase from "firebase";
+import {ProfilPage} from "../profil/profil";
 
 
 
@@ -27,35 +28,78 @@ export class DetailPage {
   public vare: Varer;
   public vareCollection: AngularFirestoreCollection<Varer>;
   public details: Observable<any[]>;
- // public item: Items;
- // quantity: 0;
 
-  selectedProduct: Product;
+  selectedProduct: Items;
   cartCount: number=0;
 
-  public savedVare: any[];
-
-  qty: any;
-  public detailsList;
+  public vareRef:firebase.database.Reference;
+  public loadedVareList:Array<any>;
+  public vareList:Array<any>;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private af: AngularFirestore, private cartService: CartServiceProvider) {
     this.vare = navParams.get('vare');
     this.vareCollection = navParams.get('vareCollection');
 
-    this.qty = 1;
+    this.vareRef = firebase.database().ref('/details');
+    this.vareRef.on('value', vareList => {
+      let varer = [];
+      vareList.forEach(vare => {
+        varer.push(vare.val());
+        return false;
+      });
+      this.vareList = varer;
+      this.loadedVareList = varer;
+    });
+
 
     this.details = this.vareCollection.doc(this.vare.id).collection("details").valueChanges();
 
-  this.selectedProduct = navParams.get('item');
+  this.selectedProduct = navParams.get('details');
 
   }
 
+  initItems(): void{
+    this.vareList = this.loadedVareList;
+  }
 
-  addToCart(product: Product){
+  getItems(searchbar){
+    this.initItems();
+    var query = searchbar.srcElement.value;
+    if(!query){
+      return;
+    }
+    this.vareList = this.vareList.filter((v) => {
+      if(v.name && query) {
+        if(v.name.toLowerCase().indexOf(query.toLowerCase()) > -1){
+          return true;
+        }
+        return false;
+      }
+    })
+
+  }
+
+  itemTapped($event,product){
+    this.navCtrl.push('ProfilPage', {
+      details: product
+    });
+  }
+
+
+
+  addToCart(product: Items){
     this.cartService.addToCart(product);
     this.cartService.cartCount=this.cartService.cartCount+1;
     this.cartCount = this.cartService.cartCount;
+  }
+
+  removeFromCart(product: Items){
+    this.cartService.removeFromCart(product);
+    if(this.cartCount != 0) {
+      this.cartService.cartCount = this.cartService.cartCount - 1;
+      this.cartCount = this.cartService.cartCount;
+    }
   }
 
 
@@ -63,18 +107,7 @@ export class DetailPage {
     console.log('ionViewDidLoad DetailPage');
   }
 
-  decrement(qty){
-  if(this.qty-1 < 1){
-    this.qty = 1;
-  } else {
-    this.qty -= 1;
-  }
 
-  }
-
-  increment(qty){
-    this.qty += 1;
-  }
 
 
   goToMakeList(){
