@@ -4,7 +4,7 @@ import {Items} from "../../models/Items";
 import {Varer} from "../../models/Varer";
 import {Item} from "ionic-angular";
 import {CartItem} from "../../models/cart-item";
-import {Product} from "../../models/product";
+
 
 //
 // const CART_KEY = 'cartItems';
