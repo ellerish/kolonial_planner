@@ -3,13 +3,12 @@ page-friend-list {
   ion-content{
     background: url("https://kolonial.no/static/img/og-1200x630.f2845d3eec83.jpg");
     background-size: cover;
-    
+
   }
 
   .container {
     background: orange;
-    height: 85%;
-    
+
  }
 
  .email {
@@ -20,15 +19,17 @@ page-friend-list {
  }
 
  .navn-handleliste {
-   font-size: 25px;
+   font-size: 22px;
    background-color: orange;
-  // color: black;
+   color: black;
+   font-family: "GT Walsheim Medium Oblique", sans-serif;
  }
+
 
  .legg-til-medlemmer {
    color: black;
  }
- 
+
  .plus-btn {
    font-size: 40px;
    color: black;
@@ -41,7 +42,7 @@ page-friend-list {
 
  .epost-label {
    color: black;
-   
+
  }
 
  .btnKlar {
@@ -49,6 +50,9 @@ page-friend-list {
 
  }
 
+  .handlelis{
+    color: black;
+  }
 
 
 

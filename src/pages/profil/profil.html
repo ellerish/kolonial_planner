@@ -22,21 +22,70 @@
   <ion-item class="item-borderless">
   <h2>{{nameBasket}}</h2>
   </ion-item>
-  <ion-list *ngFor="let items of cartItems">
+
+  <ion-item end class="email">
+    <ion-icon name="cart">
+      {{owner}}
+    </ion-icon>
+  </ion-item>
+  <ion-list>
     <ion-item>
       <ion-avatar item-start>
-        <img [src]="items.img">
+        <img src="https://kolonial.no/media/uploads/public/111/0/686800-36e62-product_list.jpg">
       </ion-avatar>
-      <h2>{{items.product}}</h2>
-      <!-- <ion-checkbox color="dark" checked="false"></ion-checkbox> -->
-      <!-- <button ion-button clear item-end class="btnBasket"><ion-icon name="cart"></ion-icon></button> -->
+      <h2>Kjøttdeig</h2>
+      <p> Pris 47,40 kr</p>
+      <p>400g</p>
+      <ion-icon item-right name="remove-circle" (click)="increment()" class="countButtons"></ion-icon>
+      <p item-right>{{cartCount}}</p>
+      <ion-icon item-right name="add-circle" (click)="decrement()" class="countButtons"></ion-icon>
+      <ion-icon item-end name="trash" (click)="emptyBasket()"></ion-icon>
+    </ion-item>
+    <p>Din sum: kr 200</p>
+  </ion-list>
+
+
+  <ion-item end class="email">
+    <ion-icon name="cart">
+      Venn 1
+    </ion-icon>
+  </ion-item>
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="">
+      </ion-avatar>
+      <h2>Name</h2>
+      <p> Pris  kr</p>
+      <p>0,5 </p>
       <ion-icon item-right name="remove-circle" (click)="increment()" class="countButtons"></ion-icon>
       <p item-right>{{qty}}</p>
       <ion-icon item-right name="add-circle" (click)="decrement()" class="countButtons"></ion-icon>
-
       <ion-icon item-end name="trash" (click)="emptyBasket()"></ion-icon>
     </ion-item>
 
+  </ion-list>
+
+
+  <ion-item end class="email">
+    <ion-icon name="cart">
+      Venn 1
+    </ion-icon>
+  </ion-item>
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="">
+      </ion-avatar>
+      <h2>Name</h2>
+      <p> Pris  kr</p>
+      <p>0,5 </p>
+      <ion-icon item-right name="remove-circle" (click)="increment()" class="countButtons"></ion-icon>
+      <p item-right>{{qty}}</p>
+      <ion-icon item-right name="add-circle" (click)="decrement()" class="countButtons"></ion-icon>
+      <ion-icon item-end name="trash" (click)="emptyBasket()"></ion-icon>
+    </ion-item>
+    <p>Din sum: kr 200</p>
   </ion-list>
 
   <ion-card class="payBox">
@@ -46,12 +95,11 @@
     <ion-card-content>
     <p>Poser: 3</p>
       <p>Varer: 6</p>
-      <p>Din sum: kr 200</p>
     </ion-card-content>
   </ion-card>
   <button ion-button full class="payButton">Til Betaling</button>
 
-  <p *ngIf="cartItems.length==0">Your Cart is Empty</p>
+
 </ion-content>
 
 <ion-footer>

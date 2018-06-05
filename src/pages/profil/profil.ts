@@ -4,6 +4,7 @@ import {HomePage} from "../home/home";
 import {AngularFirestore} from "angularfire2/firestore";
 import {CartServiceProvider} from "../../providers/cart-service/cart-service";
 import {CartItem} from "../../models/cart-item";
+import {UserProvider} from "../../providers/user/user";
 
 
 /**
@@ -20,14 +21,20 @@ import {CartItem} from "../../models/cart-item";
 })
 export class ProfilPage {
   nameBasket: string;
+  cartCount: number = 0;
+
+
+  public owner: any;
 
 
 //  selectedProduct: Product;
-  cartCount:number=0;
+ // cartCount:number=0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private  af: AngularFirestore, private cartService: CartServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private  af: AngularFirestore, private cartService: CartServiceProvider,
+              private userProvider: UserProvider) {
     this.navCtrl = navCtrl;
     this.nameBasket = navParams.get('data');
+    this.cartCount = navParams.get('cartCount')
 
 
   //  this.selectedProduct = navParams.get('item');
@@ -45,7 +52,8 @@ export class ProfilPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilPage');
-    this.cartItems=this.cartService.list();
+    this.owner = this.userProvider.getUser();
+   // this.cartItems=this.cartService.list();
   }
 
 

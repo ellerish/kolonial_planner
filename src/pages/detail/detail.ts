@@ -30,7 +30,9 @@ export class DetailPage {
   public details: Observable<any[]>;
 
   selectedProduct: Items;
-  cartCount: number=0;
+  cartCount: number = 0;
+
+
 
   public vareRef:firebase.database.Reference;
   public loadedVareList:Array<any>;
@@ -56,6 +58,9 @@ export class DetailPage {
     this.details = this.vareCollection.doc(this.vare.id).collection("details").valueChanges();
 
   this.selectedProduct = navParams.get('details');
+
+ // this.cartCount = this.navParams.get('cartCount')
+
 
   }
 
