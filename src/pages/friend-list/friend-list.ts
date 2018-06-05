@@ -79,10 +79,9 @@ export class FriendListPage {
     this.navCtrl.push('BasketPage');
   }
 
-  goToProfil(nameBasket, friendMail) {
+  goToProfil(nameBasket) {
     this.navCtrl.push('ProfilPage', {
-      data: nameBasket,
-      mail: friendMail
+      data: nameBasket
     });
   }
 

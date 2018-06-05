@@ -8,8 +8,8 @@ page-friend-list {
 
   .container {
     background: orange;
-
  }
+
 
  .email {
    font-size: 25px;
@@ -25,6 +25,10 @@ page-friend-list {
    font-family: "GT Walsheim Medium Oblique", sans-serif;
  }
 
+  .newMem{
+    color: #222222;
+  }
+
 
  .legg-til-medlemmer {
    color: black;
@@ -32,7 +36,7 @@ page-friend-list {
 
  .plus-btn {
    font-size: 40px;
-   color: black;
+   color: #222222;
  }
 
  .add-email {
@@ -40,19 +44,17 @@ page-friend-list {
    background-color: orange;
  }
 
- .epost-label {
-   color: black;
-
- }
 
  .btnKlar {
    font-size: 30px;
+   color: black;
+ //  background: #1bb776;
 
  }
-
   .handlelis{
-    color: black;
-  }
+  color: black;
+ }
+
 
 
 

@@ -3,8 +3,6 @@
 
 <ion-content padding>
     <ion-card class="container">
-
-
 <form
   [formGroup]="form"
   (ngSubmit)="manage(form.value)">
@@ -21,7 +19,7 @@
       <ion-input formControlName="name" #nameBasket></ion-input>
     </ion-item>
 
-    <span
+    <span class="newMem"
       ion-button
       float-left
       icon-left
@@ -52,12 +50,12 @@
           <ion-item class="add-email">
             <ion-label floating>Epost-Adresse:</ion-label>
             <ion-input
-              formControlName="name" #friendMail></ion-input>
+              formControlName="name"></ion-input>
           </ion-item>
 
 
           <!-- Allow generated input field to be removed -->
-          <span
+          <span class="newMem"
             float-right
             ion-button
             icon-left
@@ -76,17 +74,12 @@
 
 
   </ion-list>
-
-
-  <!-- Only allow form to be submitted IF validation criteria for
-          input fields has been successfully passed -->
   <button
     ion-button
     block
     margin-top
-    color="primary"
     text-center
-    [disabled]="!form.valid" (click)="goToBasketList()" class="btnKlar">Klar</button>
+    [disabled]="!form.valid" (click)="goToBasketList()"  class="btnKlar">Klar</button>
 </form>
 </ion-card>
 

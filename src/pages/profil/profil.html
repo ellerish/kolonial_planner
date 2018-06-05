@@ -86,26 +86,52 @@
   <ion-list>
     <ion-item>
       <ion-avatar item-start>
-        <img src ="">
+        <img src ="https://kolonial.no/media/uploads/public/0/141/2941-ecfe7-product_list.jpg">
       </ion-avatar>
-      <h2>Name</h2>
-      <p> Pris  kr</p>
-      <p>0,5 </p>
+      <h2>Corona</h2>
+      <p> Pris 40,90 kr</p>
+      <p>0,33 l </p>
       <ion-icon item-right name="remove-circle" (click)="increment()" class="countButtons"></ion-icon>
-      <p item-right>{{qty}}</p>
+      <p item-right>10</p>
       <ion-icon item-right name="add-circle" (click)="decrement()" class="countButtons"></ion-icon>
       <ion-icon item-end name="trash" (click)="emptyBasket()"></ion-icon>
     </ion-item>
-    <p>Din sum: kr 200</p>
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src ="https://kolonial.no/media/uploads/public/130/72/682472-3b3b5-product_list.jpg">
+      </ion-avatar>
+      <h2>Lomper</h2>
+      <p> Pris 12,90 kr</p>
+      <p>260 g</p>
+      <ion-icon item-right name="remove-circle" (click)="increment()" class="countButtons"></ion-icon>
+      <p item-right>2</p>
+      <ion-icon item-right name="add-circle" (click)="decrement()" class="countButtons"></ion-icon>
+      <ion-icon item-end name="trash" (click)="emptyBasket()"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src ="https://kolonial.no/media/uploads/public/217/307/683507-10f4b-product_list.jpg">
+      </ion-avatar>
+      <h2>Scampi</h2>
+      <p> Pris 59,90 kr</p>
+      <p>270 g</p>
+      <ion-icon item-right name="remove-circle" (click)="increment()" class="countButtons"></ion-icon>
+      <p item-right>1</p>
+      <ion-icon item-right name="add-circle" (click)="decrement()" class="countButtons"></ion-icon>
+      <ion-icon item-end name="trash" (click)="emptyBasket()"></ion-icon>
+    </ion-item>
+    <p>Din sum: kr 494,70   <ion-icon float-right name="trash" (click)="emptyBasket()">Tøm</ion-icon> </p>
   </ion-list>
 
   <ion-card class="payBox">
     <ion-card-header>
-    Total sum = kr 400
+    Total sum = kr 952,9
     </ion-card-header>
     <ion-card-content>
-    <p>Poser: 3</p>
-      <p>Varer: 6</p>
+    <p>Poser: 8</p>
+      <p>Varer: 22</p>
+      <p>Leveringsgebyr: 0,- </p>
     </ion-card-content>
   </ion-card>
   <button ion-button full class="payButton">Til Betaling</button>
