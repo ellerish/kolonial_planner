@@ -11,7 +11,9 @@ import {AngularFirestore} from "angularfire2/firestore";
 @Injectable()
 export class UserProvider {
 
-  user: string
+  user: string;
+
+  private mail = [];
 
   constructor(private af: AngularFirestore) {
     console.log('Hello UserProvider Provider');
@@ -62,5 +64,8 @@ export class UserProvider {
 
 
   }
+
+
+
 
 }

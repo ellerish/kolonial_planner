@@ -26,6 +26,8 @@ export class ProfilPage {
 
   public owner: any;
 
+  friendMail: string;
+
 
 //  selectedProduct: Product;
  // cartCount:number=0;
@@ -34,7 +36,9 @@ export class ProfilPage {
               private userProvider: UserProvider) {
     this.navCtrl = navCtrl;
     this.nameBasket = navParams.get('data');
-    this.cartCount = navParams.get('cartCount')
+
+    this.friendMail = navParams.get('mail');
+    //this.cartCount = navParams.get('cartCount')
 
 
   //  this.selectedProduct = navParams.get('item');
@@ -53,7 +57,8 @@ export class ProfilPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilPage');
     this.owner = this.userProvider.getUser();
-   // this.cartItems=this.cartService.list();
+    this.cartItems=this.cartService.list();
+    this.cartCount = this.cartService.getCartCount();
   }
 
 

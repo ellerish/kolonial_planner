@@ -23,6 +23,9 @@ export class FriendListPage {
   public owner: any;
 
 
+  public mails: string;
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder : FormBuilder,
               private userProvider : UserProvider) {
     this.navCtrl = navCtrl;
@@ -61,7 +64,7 @@ export class FriendListPage {
   }
 
   goToBasketList() {
-    this.navCtrl.push(BasketPage)
+    this.navCtrl.push('BasketPage');
   }
 
   goToMakeList(){
@@ -76,9 +79,10 @@ export class FriendListPage {
     this.navCtrl.push('BasketPage');
   }
 
-  goToProfil(nameBasket) {
+  goToProfil(nameBasket, friendMail) {
     this.navCtrl.push('ProfilPage', {
-      data: nameBasket
+      data: nameBasket,
+      mail: friendMail
     });
   }
 

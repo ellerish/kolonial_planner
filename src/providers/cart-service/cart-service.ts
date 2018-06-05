@@ -50,6 +50,10 @@ export class CartServiceProvider {
     return CART_ITEM_LIST;
   }
 
+  getCartCount(){
+    return this.cartCount;
+  }
+
   clear() {
     CART_ITEM_LIST.splice(0, CART_ITEM_LIST.length);
   }

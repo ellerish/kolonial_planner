@@ -7,7 +7,6 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>profil</ion-title>
     <ion-buttons end>
       <button icon-only ion-button (click)="logout()">
         <ion-icon name="exit"></ion-icon>
@@ -18,7 +17,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="content">
   <ion-item class="item-borderless">
   <h2>{{nameBasket}}</h2>
   </ion-item>
@@ -37,45 +36,57 @@
       <p> Pris 47,40 kr</p>
       <p>400g</p>
       <ion-icon item-right name="remove-circle" (click)="increment()" class="countButtons"></ion-icon>
-      <p item-right>{{cartCount}}</p>
+      <p item-right>1</p>
       <ion-icon item-right name="add-circle" (click)="decrement()" class="countButtons"></ion-icon>
       <ion-icon item-end name="trash" (click)="emptyBasket()"></ion-icon>
     </ion-item>
-    <p>Din sum: kr 200</p>
-  </ion-list>
-
-
-  <ion-item end class="email">
-    <ion-icon name="cart">
-      Venn 1
-    </ion-icon>
-  </ion-item>
-  <ion-list>
     <ion-item>
       <ion-avatar item-start>
-        <img [src]="">
+        <img src="https://kolonial.no/media/uploads/public/161/375/679175-ac417-product_list.jpg">
       </ion-avatar>
-      <h2>Name</h2>
-      <p> Pris  kr</p>
-      <p>0,5 </p>
+      <h2>Perroni</h2>
+      <p> Pris 38,50 kr</p>
+      <p>0,33 l</p>
       <ion-icon item-right name="remove-circle" (click)="increment()" class="countButtons"></ion-icon>
-      <p item-right>{{qty}}</p>
+      <p item-right>6</p>
       <ion-icon item-right name="add-circle" (click)="decrement()" class="countButtons"></ion-icon>
       <ion-icon item-end name="trash" (click)="emptyBasket()"></ion-icon>
     </ion-item>
-
+    <p>Din sum: kr 278,40 </p>
   </ion-list>
 
 
   <ion-item end class="email">
     <ion-icon name="cart">
-      Venn 1
+      venn1@mail.no
     </ion-icon>
   </ion-item>
   <ion-list>
     <ion-item>
       <ion-avatar item-start>
-        <img [src]="">
+        <img src="https://kolonial.no/media/uploads/public/0/9/19609-66096-product_list.jpg">
+      </ion-avatar>
+      <h2>Grillribs</h2>
+      <p> Pris 89,90 kr</p>
+      <p> 800 g </p>
+      <ion-icon item-right name="remove-circle" (click)="increment()" class="countButtons"></ion-icon>
+      <p item-right>2</p>
+      <ion-icon item-right name="add-circle" (click)="decrement()" class="countButtons"></ion-icon>
+      <ion-icon item-end name="trash" (click)="emptyBasket()"></ion-icon>
+    </ion-item>
+    <p>Din sum: Kr 179,80 </p>
+  </ion-list>
+
+
+  <ion-item end class="email">
+    <ion-icon name="cart">
+      venn2@mail.com
+    </ion-icon>
+  </ion-item>
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src ="">
       </ion-avatar>
       <h2>Name</h2>
       <p> Pris  kr</p>

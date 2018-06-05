@@ -1,12 +1,28 @@
 page-profil {
+  background: #FFA51E;
 
 
+  .item-borderless{
+    background: #FFA51E;
+    text-align: center;
+    font-family: "GT Walsheim Medium Oblique", sans-serif;
+  }
+
+  .name{
+    size: 70px;
+
+  }
   .nameBasket{
     position: absolute;
     text-align: center;
     font-family: "GT Walsheim Medium Oblique", sans-serif;
     width: 100%;
+    size: 40px;
     border-style: none;
+  }
+
+  .content{
+    background: #FFA51E;
   }
 
 
