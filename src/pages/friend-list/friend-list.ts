@@ -22,7 +22,7 @@ export class FriendListPage {
 
   public form: FormGroup;
   public owner: any;
-  public nameOnBasket= [];
+ // public nameOnBasket= [];
 
 
  // public mails: string;
@@ -81,8 +81,10 @@ export class FriendListPage {
     this.navCtrl.push(HomePage);
   }
 
-  goToBasket(){
-    this.navCtrl.push('BasketPage');
+  goToBasket(namebasket){
+    this.navCtrl.push('BasketPage', {
+      data: namebasket
+    });
   }
 
   goToProfil(nameBasket) {

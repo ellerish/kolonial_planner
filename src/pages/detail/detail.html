@@ -32,15 +32,15 @@
 
 <ion-footer>
   <ion-item>
-    <ion-icon name="cart" class="fotText"></ion-icon> Handlekurven {{cartCount}} varer
+    <ion-icon name="cart" class="fotText"></ion-icon> {{nameBasket}} {{cartCount}} varer
   </ion-item>
 
   <ion-toolbar>
     <ion-segment>
       <ion-segment-button (click)="goToHome()"><ion-icon name="home"></ion-icon> </ion-segment-button>
       <ion-segment-button (click)="goToMakeList()"><ion-icon name="create"></ion-icon></ion-segment-button>
-      <ion-segment-button (click)="goToBasket()"><ion-icon name="cart"></ion-icon></ion-segment-button>
-      <ion-segment-button (click)="goToProfil()"><ion-icon name="contact"></ion-icon></ion-segment-button>
+      <ion-segment-button (click)="goToBasket(nameBasket)"><ion-icon name="cart"></ion-icon></ion-segment-button>
+      <ion-segment-button (click)="goToProfil(nameBasket)"><ion-icon name="contact"></ion-icon></ion-segment-button>
     </ion-segment>
   </ion-toolbar>
 </ion-footer>

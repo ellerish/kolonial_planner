@@ -20,6 +20,7 @@ import {ProfilPage} from "../profil/profil";
 })
 export class BasketPage {
 
+  nameBasket: string;
   searchQuery: string = '';
   items: Observable<Varer[]>;
 
@@ -29,6 +30,8 @@ export class BasketPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private af: AngularFirestore) {
     this.navCtrl = navCtrl;
     this.initializeItems();
+
+    this.nameBasket = navParams.get('data');
 
     this.collection = af.collection<Varer>("varer");
     this.varer = this.collection.snapshotChanges()
@@ -64,11 +67,12 @@ export class BasketPage {
     console.log('ionViewDidLoad BasketPage');
   }
 
-  goToDetailPage(vare: Varer) {
+  goToDetailPage(vare: Varer, nameBasket) {
     this.navCtrl.push('DetailPage', {
       vare,
-      vareCollection: this.collection
-    })
+      vareCollection: this.collection,
+      data: nameBasket
+    });
   }
 
   goToMakeList(){
@@ -79,12 +83,16 @@ export class BasketPage {
     this.navCtrl.push(HomePage);
   }
 
-  goToBasket(){
-    this.navCtrl.push('BasketPage');
+  goToBasket(nameBasket){
+    this.navCtrl.push('BasketPage', {
+      data: nameBasket
+    });
   }
 
-  goToProfil(){
-    this.navCtrl.push('ProfilPage');
+  goToProfil(nameBasket){
+    this.navCtrl.push('ProfilPage', {
+      data: nameBasket
+    });
   }
 
 }

@@ -76,11 +76,15 @@ export class ProfilPage {
     this.navCtrl.push(HomePage);
   }
 
-  goToBasket(){
-    this.navCtrl.push('BasketPage');
+  goToBasket(nameBasket){
+    this.navCtrl.push('BasketPage', {
+      data: nameBasket
+    });
   }
 
-  goToProfil(){
-    this.navCtrl.push('ProfilPage');
+  goToProfil(nameBasket){
+    this.navCtrl.push('ProfilPage', {
+      data: nameBasket
+    });
   }
 }

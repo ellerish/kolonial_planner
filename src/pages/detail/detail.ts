@@ -32,7 +32,7 @@ export class DetailPage {
   selectedProduct: Items;
   cartCount: number = 0;
 
-
+  nameBasket: string;
 
   public vareRef:firebase.database.Reference;
   public loadedVareList:Array<any>;
@@ -42,6 +42,8 @@ export class DetailPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private af: AngularFirestore, private cartService: CartServiceProvider) {
     this.vare = navParams.get('vare');
     this.vareCollection = navParams.get('vareCollection');
+
+    this.nameBasket = navParams.get('data');
 
     this.vareRef = firebase.database().ref('/details');
     this.vareRef.on('value', vareList => {
@@ -123,11 +125,16 @@ export class DetailPage {
     this.navCtrl.push(HomePage);
   }
 
-  goToBasket(){
-    this.navCtrl.push('BasketPage');
+  goToBasket(nameBasket){
+    this.navCtrl.push('BasketPage', {
+      data: nameBasket
+    });
   }
 
-  goToProfil(){
-    this.navCtrl.push('ProfilPage');
+  goToProfil(nameBasket){
+    this.navCtrl.push('ProfilPage', {
+      data: nameBasket
+    });
+
   }
 }
