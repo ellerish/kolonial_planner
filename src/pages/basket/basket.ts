@@ -20,11 +20,15 @@ import {ProfilPage} from "../profil/profil";
 })
 export class BasketPage {
 
+  searchQuery: string = '';
+  items: Observable<Varer[]>;
+
   public collection: AngularFirestoreCollection<Varer>;
   public varer: Observable<Varer[]>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private af: AngularFirestore) {
     this.navCtrl = navCtrl;
+    this.initializeItems();
 
     this.collection = af.collection<Varer>("varer");
     this.varer = this.collection.snapshotChanges()
@@ -39,6 +43,21 @@ export class BasketPage {
           };
         })
       });
+  }
+
+
+  initializeItems() {
+    this.items = this.varer;
+  }
+
+  getItems(ev: any) {
+    this.initializeItems();
+    const val = ev.target.value;
+    if (val && val.trim() != '') {
+      this.items = this.items.filter((item) => {
+        return (item.toString().toLowerCase().indexOf(val.toString().toLowerCase()) > -1);
+      })
+    }
   }
 
   ionViewDidLoad() {

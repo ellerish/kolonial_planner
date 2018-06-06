@@ -24,6 +24,7 @@ export class ProfilPage {
   cartCount: number = 0;
 
 
+  public  nameOnBasket= [];
   public owner: any;
 
   friendMail: string;
@@ -59,6 +60,7 @@ export class ProfilPage {
     this.owner = this.userProvider.getUser();
     this.cartItems=this.cartService.list();
     this.cartCount = this.cartService.getCartCount();
+    this.nameOnBasket= this.cartService.getNameOnBasket();
   }
 
 

@@ -22,7 +22,7 @@
       <p>{{detail.size}}</p>
      <!-- <button ion-button clear item-end class="btnBasket"><ion-icon name="cart"></ion-icon></button> -->
       <ion-icon item-right name="remove-circle" (click)="removeFromCart(selectedProduct)" class="countButtons"></ion-icon>
-      <p item-right>{{cartCount}}</p>
+      <p item-right>{{this.cartCount}}</p>
       <ion-icon item-right name="add-circle" (click)="addToCart(selectedProduct)" class="countButtons"></ion-icon>
       <ion-icon name="basket" (click)="itemTapped($event,product)"></ion-icon>
     </ion-item>

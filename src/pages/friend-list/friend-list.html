@@ -16,7 +16,7 @@
 
     <ion-item class="navn-handleliste">
       <ion-label floating class="handlelis">Navn på Handlelisten:</ion-label>
-      <ion-input formControlName="name" #nameBasket></ion-input>
+      <ion-input formControlName="name" #nameBasket>{{nameOnBasket}}</ion-input>
     </ion-item>
 
     <span class="newMem"
@@ -79,7 +79,7 @@
     block
     margin-top
     text-center
-    [disabled]="!form.valid" (click)="goToBasketList()"  class="btnKlar">Klar</button>
+    [disabled]="!form.valid" (click)="saveName()"  class="btnKlar">Klar</button>
 </form>
 </ion-card>
 

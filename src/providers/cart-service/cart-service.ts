@@ -16,6 +16,8 @@ export class CartServiceProvider {
   cartItems: Items[];
   cartCount: number;
 
+  nameOnBasket= [];
+  nameTobeSaved= [];
 
   constructor() {
     this.cartCount = 0;
@@ -58,5 +60,13 @@ export class CartServiceProvider {
     CART_ITEM_LIST.splice(0, CART_ITEM_LIST.length);
   }
 
+  getNameOnBasket(){
+    return this.nameOnBasket;
+  }
+
+  addName(){
+    let nameSave = this.nameOnBasket;
+    this.nameTobeSaved.push(nameSave)
+  }
 
 }

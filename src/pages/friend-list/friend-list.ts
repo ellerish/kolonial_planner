@@ -4,6 +4,7 @@ import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {UserProvider} from "../../providers/user/user";
 import {HomePage} from "../home/home";
 import {BasketPage} from "../basket/basket";
+import {CartServiceProvider} from "../../providers/cart-service/cart-service";
 
 /**
  * Generated class for the FriendListPage page.
@@ -21,13 +22,14 @@ export class FriendListPage {
 
   public form: FormGroup;
   public owner: any;
+  public nameOnBasket= [];
 
 
-  public mails: string;
+ // public mails: string;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder : FormBuilder,
-              private userProvider : UserProvider) {
+              private userProvider : UserProvider, private cartService: CartServiceProvider) {
     this.navCtrl = navCtrl;
 
 
@@ -61,6 +63,10 @@ export class FriendListPage {
   ionViewDidLoad() {
     this.owner = this.userProvider.getUser();
     console.log('ionViewDidLoad FriendListPage');
+  }
+
+  saveName(){
+    this.cartService.addName();
   }
 
   goToBasketList() {
