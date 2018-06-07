@@ -115,6 +115,9 @@ export class DetailPage {
   }
 
 
+  logout(){
+    this.af.app.auth().signOut();
+  }
 
 
   goToMakeList(){
