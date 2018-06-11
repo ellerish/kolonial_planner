@@ -50,7 +50,7 @@
         *ngFor="let friend of form.controls.friends.controls; let i = index">
         <ion-item-group>
           <ion-item class="add-email">
-            <ion-label floating>Epost-Adresse:</ion-label>
+            <ion-label color="black" stacked>Epost-Adresse/Telefonnummer:</ion-label>
             <ion-input
               formControlName="name">
             </ion-input>
@@ -92,7 +92,7 @@
 
   <ion-toolbar>
     <ion-segment>
-      <ion-segment-button (click)="goToHome()"><ion-icon name="home"></ion-icon></ion-segment-button>
+      <ion-segment-button (click)="goToHome()"><ion-icon name="home" class="icon"></ion-icon></ion-segment-button>
       <ion-segment-button (click)="goToMakeList()"><ion-icon name="create"></ion-icon></ion-segment-button>
       <ion-segment-button (click)="goToBasket(nameBasket.value)"><ion-icon name="cart"></ion-icon></ion-segment-button>
       <ion-segment-button (click)="goToProfil(nameBasket.value)"><ion-icon name="contact"></ion-icon></ion-segment-button>
