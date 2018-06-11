@@ -65,9 +65,6 @@ export class FriendListPage {
     console.log('ionViewDidLoad FriendListPage');
   }
 
-  saveName(){
-    this.cartService.addName();
-  }
 
   goToBasketList() {
     this.navCtrl.push('BasketPage');

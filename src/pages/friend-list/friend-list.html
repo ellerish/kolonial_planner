@@ -50,7 +50,8 @@
           <ion-item class="add-email">
             <ion-label floating>Epost-Adresse:</ion-label>
             <ion-input
-              formControlName="name"></ion-input>
+              formControlName="name">
+            </ion-input>
           </ion-item>
 
 
@@ -79,7 +80,7 @@
     block
     margin-top
     text-center
-    [disabled]="!form.valid" (click)="saveName()"  class="btnKlar">Klar</button>
+    [disabled]="!form.valid" (click)=goToBasketList()"  class="btnKlar">Klar</button>
 </form>
 </ion-card>
 
