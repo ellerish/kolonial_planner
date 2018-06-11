@@ -7,10 +7,7 @@ import {Observable} from "rxjs/Observable";
 import {ProfilPage} from "../profil/profil";
 
 /**
- * Generated class for the BasketPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
+ * Basketpage inneholder alle kategoriene av varer hentet fra firebase database
  */
 
 @IonicPage()
@@ -20,10 +17,11 @@ import {ProfilPage} from "../profil/profil";
 })
 export class BasketPage {
 
+  //Navnet på handlelisten generert av bruker
   nameBasket: string;
-  searchQuery: string = '';
-  items: Observable<Varer[]>;
 
+  //AngularfirestoreCollecion database
+  items: Observable<Varer[]>;
   public collection: AngularFirestoreCollection<Varer>;
   public varer: Observable<Varer[]>;
 
@@ -33,6 +31,7 @@ export class BasketPage {
 
     this.nameBasket = navParams.get('data');
 
+    //Henter ut collection 'Varer fra firebase'
     this.collection = af.collection<Varer>("varer");
     this.varer = this.collection.snapshotChanges()
       .map(actions =>  {
@@ -53,6 +52,8 @@ export class BasketPage {
     this.items = this.varer;
   }
 
+
+  //Non functionial search-method
   getItems(ev: any) {
     this.initializeItems();
     const val = ev.target.value;
@@ -67,6 +68,7 @@ export class BasketPage {
     console.log('ionViewDidLoad BasketPage');
   }
 
+  //Pusher navnet på handlelisten videre til 'DetailPage'
   goToDetailPage(vare: Varer, nameBasket) {
     this.navCtrl.push('DetailPage', {
       vare,
@@ -75,6 +77,7 @@ export class BasketPage {
     });
   }
 
+  //NavController for å bytte side
   goToMakeList(){
     this.navCtrl.push('FriendListPage')
   }
@@ -83,12 +86,14 @@ export class BasketPage {
     this.navCtrl.push(HomePage);
   }
 
+  //Pusher med parameter navn på handleliste
   goToBasket(nameBasket){
     this.navCtrl.push('BasketPage', {
       data: nameBasket
     });
   }
 
+  //Pusher med parameter navn på handleliste
   goToProfil(nameBasket){
     this.navCtrl.push('ProfilPage', {
       data: nameBasket

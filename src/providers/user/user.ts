@@ -13,7 +13,7 @@ export class UserProvider {
 
   user: string;
 
-  private mail = [];
+ // private mail = [];
 
   constructor(private af: AngularFirestore) {
     console.log('Hello UserProvider Provider');

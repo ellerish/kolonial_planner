@@ -3,14 +3,11 @@
 
   <ion-searchbar (ionInput)=getItems($event) placeholder="Søk i tusenvis av varer "></ion-searchbar>
 
-
   <ion-list>
     <ion-item *ngFor="let vare of varer | async" (click)="goToDetailPage(vare,nameBasket)">
       {{vare.body}}
     </ion-item>
   </ion-list>
-
-
 
 </ion-content>
 

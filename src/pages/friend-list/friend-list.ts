@@ -7,10 +7,10 @@ import {BasketPage} from "../basket/basket";
 import {CartServiceProvider} from "../../providers/cart-service/cart-service";
 
 /**
- * Generated class for the FriendListPage page.
+ *FriendListPage page.
  *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
+ * Klasse for å legge til venner/medlemmer inn på handelisten og
+ * navngi handlelisten via form-control, og er dynamisk
  */
 
 @IonicPage()
@@ -22,11 +22,6 @@ export class FriendListPage {
 
   public form: FormGroup;
   public owner: any;
- // public nameOnBasket= [];
-
-
- // public mails: string;
-
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder : FormBuilder,
               private userProvider : UserProvider, private cartService: CartServiceProvider) {
@@ -55,10 +50,7 @@ export class FriendListPage {
     control.removeAt(i);
   }
 
-  manage(val : any) : void
-  {
-    console.dir(val);
-  }
+
 
   ionViewDidLoad() {
     this.owner = this.userProvider.getUser();

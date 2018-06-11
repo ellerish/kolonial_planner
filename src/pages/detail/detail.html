@@ -22,9 +22,9 @@
       <p>{{detail.size}}</p>
      <!-- <button ion-button clear item-end class="btnBasket"><ion-icon name="cart"></ion-icon></button> -->
       <ion-icon item-right name="remove-circle" (click)="removeFromCart(selectedProduct)" class="countButtons"></ion-icon>
-      <p item-right></p>
+      <p item-right>{{addTo}}</p>
       <ion-icon item-right name="add-circle" (click)="addToCart(selectedProduct)" class="countButtons"></ion-icon>
-      <button ion-button color="dark" class="leggTil" (click)="addToCart(selectedProduct)">Legg til</button>
+      <button ion-button color="dark" class="leggTil" (click)="addToCartOne(selectedProduct)">Legg til</button>
     </ion-item>
   </ion-list>
 

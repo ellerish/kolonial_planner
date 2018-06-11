@@ -12,10 +12,11 @@ import {ProfilPage} from "../profil/profil";
 
 
 /**
- * Generated class for the DetailPage page.
+ * DetailPage page.
  *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
+ * Henter ut alle varene under collection details til den enkelte vare collection,
+ * viser varene i en liste og mulighet for å legge produkt i handlekurven
+ *
  */
 
 @IonicPage()
@@ -30,8 +31,11 @@ export class DetailPage {
   public details: Observable<any[]>;
 
   selectedProduct: Items;
+  //Viser antall varer lagt til i handlekurv
   cartCount: number = 0;
+  addTo: number;
 
+  //Navnet på handlelisten
   nameBasket: string;
 
   public vareRef:firebase.database.Reference;
@@ -68,6 +72,8 @@ export class DetailPage {
     this.vareList = this.loadedVareList;
   }
 
+
+  //Non functional search-method
   getItems(searchbar){
     this.initItems();
     var query = searchbar.srcElement.value;
@@ -86,12 +92,23 @@ export class DetailPage {
   }
 
 
+  //Legger varen i handlekurv + 1 hver gang knappen trykkes
+  addToCartOne(product: Items){
+    this.cartService.addToCart(product);
+    this.cartService.cartCount=this.cartService.cartCount+1;
+    this.cartCount = this.cartService.cartCount;
+    this.addTo = 1;
+  }
+
+
+  //Legger varen i handlekurv + 1 hver gang knappen trykkes
   addToCart(product: Items){
     this.cartService.addToCart(product);
     this.cartService.cartCount=this.cartService.cartCount+1;
     this.cartCount = this.cartService.cartCount;
   }
 
+  //Legger varen i handlekurv + 1 hver gang knappen trykkes
   removeFromCart(product: Items){
     this.cartService.removeFromCart(product);
     if(this.cartCount != 0) {

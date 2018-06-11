@@ -8,10 +8,11 @@ import {UserProvider} from "../../providers/user/user";
 
 
 /**
- * Generated class for the ProfilPage page.
+ *ProfilPage page.
  *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
+ * En ganske statisk klasse for å vise oppsett av hvordan vi ønsket
+ * at betaling ville sett ut og hvordan det skulle bli delt på de ulike medlemmene av
+ * handelistem
  */
 
 @IonicPage()
@@ -20,50 +21,31 @@ import {UserProvider} from "../../providers/user/user";
   templateUrl: 'profil.html',
 })
 export class ProfilPage {
+
+
   nameBasket: string;
   cartCount: number = 0;
-
-
-  public  nameOnBasket= [];
   public owner: any;
 
-  friendMail: string;
-
-
-//  selectedProduct: Product;
- // cartCount:number=0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private  af: AngularFirestore, private cartService: CartServiceProvider,
               private userProvider: UserProvider) {
     this.navCtrl = navCtrl;
     this.nameBasket = navParams.get('data');
-
-    this.friendMail = navParams.get('mail');
-    //this.cartCount = navParams.get('cartCount')
-
-
-  //  this.selectedProduct = navParams.get('item');
   }
-
-
-  cartItems:CartItem[]=[];
-
 
   emptyBasket(){
     this.cartCount = 0;
   }
 
-
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilPage');
+    //Henter epost-adresse til innlogget bruker via user-service provider
     this.owner = this.userProvider.getUser();
-    this.cartItems=this.cartService.list();
-    this.cartCount = this.cartService.getCartCount();
-    this.nameOnBasket= this.cartService.getNameOnBasket();
+
   }
 
-
+  //Funksjon for å logge ut av konto
   logout() {
     this.af.app.auth().signOut();
   }

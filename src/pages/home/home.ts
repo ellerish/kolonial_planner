@@ -17,8 +17,6 @@ export class HomePage {
     this.navCtrl.push('FriendListPage');
   }
 
-
-
   goToMakeList(){
     this.navCtrl.push('FriendListPage')
   }

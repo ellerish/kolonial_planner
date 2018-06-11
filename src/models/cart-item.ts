@@ -1,4 +1,4 @@
-import {Varer} from "./Varer";
+
 import {Items} from "./Items";
 
 

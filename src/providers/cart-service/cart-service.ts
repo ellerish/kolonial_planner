@@ -6,8 +6,6 @@ import {Item} from "ionic-angular";
 import {CartItem} from "../../models/cart-item";
 
 
-//
-// const CART_KEY = 'cartItems';
 
 export const CART_ITEM_LIST:CartItem[]=[];
 
@@ -23,6 +21,7 @@ export class CartServiceProvider {
     this.cartCount = 0;
   }
 
+  //Legg til vareantall til handlekurven
   addToCart(product: Items){
     var addedItem = CART_ITEM_LIST.find(
       t => t.product == product
@@ -37,6 +36,7 @@ export class CartServiceProvider {
     }
   }
 
+  //Ta vekk vare anall fra handlekurven
   removeFromCart(product: Items) {
     var addedItem = CART_ITEM_LIST.find(
       t => t.product == product
@@ -60,13 +60,6 @@ export class CartServiceProvider {
     CART_ITEM_LIST.splice(0, CART_ITEM_LIST.length);
   }
 
-  getNameOnBasket(){
-    return this.nameOnBasket;
-  }
 
-  addName(){
-    let nameSave = this.nameOnBasket;
-    this.nameTobeSaved.push(nameSave)
-  }
 
 }

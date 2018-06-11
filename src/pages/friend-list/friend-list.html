@@ -12,15 +12,11 @@
 
 
 <form
-  [formGroup]="form"
-  (ngSubmit)="manage(form.value)">
-
+  [formGroup]="form">
   <ion-list>
-
     <ion-item class="navn-handleliste">
       <ion-input formControlName="name" #nameBasket placeholder="Navn på Handlelisten:">{{nameBasket}}</ion-input>
     </ion-item>
-
     <span class="newMem"
       ion-button
       float-left
@@ -30,8 +26,6 @@
                <ion-icon name="add" class="plus-btn"></ion-icon>
                Legg til medlemmer
          </span>
-
-
 
     <!-- Assign the technologies FormArray to the form
          where we want to track/generate new input track fields -->
@@ -55,8 +49,6 @@
               formControlName="name">
             </ion-input>
           </ion-item>
-
-
           <!-- Allow generated input field to be removed -->
           <span class="newMem"
             float-right
@@ -71,11 +63,6 @@
         </ion-item-group>
       </section>
     </div>
-
-
-    <!-- Allow new input field to be generated/added -->
-
-
   </ion-list>
   <button
     ion-button
@@ -89,7 +76,6 @@
 </ion-content>
 
 <ion-footer>
-
   <ion-toolbar>
     <ion-segment>
       <ion-segment-button (click)="goToHome()"><ion-icon name="home" class="icon"></ion-icon></ion-segment-button>
