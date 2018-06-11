@@ -7,15 +7,25 @@
 
     .card-title {
       position: absolute;
-      top: 36%;
-      font-size: 1.7em;
+      top: 22%;
+      font-size: 1.9em;
       width: 100%;
-      // font-weight: bold;
+      font-weight: bold !important;
       color: #FFF;
       // font-family: "GT Walsheim Regular", sans-serif;
        // font-family: "GT Walsheim Regular Oblique", sans-serif;
       // font-family: "GT Walsheim Medium", sans-serif;
       font-family: "GT Walsheim Medium Oblique", sans-serif;
+    }
+
+    .card-subtitle{
+      position: absolute;
+      top: 50%;
+      font-size: 1.9em;
+      width: 100%;
+      font-weight: bold !important;
+      color: #FFF;
+
     }
 
 
@@ -25,8 +35,6 @@
     display: block;
     clear: both;
   }
-
-
 
   }
 

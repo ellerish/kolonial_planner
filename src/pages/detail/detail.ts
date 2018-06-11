@@ -61,8 +61,6 @@ export class DetailPage {
 
   this.selectedProduct = navParams.get('details');
 
- // this.cartCount = this.navParams.get('cartCount')
-
 
   }
 
@@ -86,13 +84,6 @@ export class DetailPage {
     })
 
   }
-
-  itemTapped($event,product){
-    this.navCtrl.push('ProfilPage', {
-      details: product
-    });
-  }
-
 
 
   addToCart(product: Items){

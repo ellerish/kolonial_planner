@@ -11,9 +11,9 @@
   </ion-card>
 
   <ion-card>
-      <img src="../../assets/imgs/grillpolser.jpg"/>
-      <div class="card-title">Se vårt fantastiske grillutvalg!</div>
-      <div class="card-subtitle"></div>
+    <img src="../../assets/imgs/kolonial_bil.jpg"/>
+    <div class="card-title">La oss ta panten din!</div>
+    <div class="card-subtitle"></div>
   </ion-card>
 
   <ion-card (click)="goToMakeListFriends()">
@@ -22,9 +22,17 @@
     <div class="card-subtitle"></div>
   </ion-card>
 
+
+
+  <ion-card>
+      <img src="../../assets/imgs/grillpolser.jpg"/>
+      <div class="card-title"></div>
+      <div class="card-subtitle"></div>
+  </ion-card>
+
   <ion-card>
       <img src="../../assets/imgs/guacamole.jpg"/>
-      <div class="card-title">Nyhet! Deilig, fersk guacamole!</div>
+      <div class="card-title"></div>
       <div class="card-subtitle"></div>
   </ion-card>
 
@@ -33,18 +41,11 @@
       <div class="card-title">Lag din egen wrap!</div>
       <div class="card-subtitle"></div>
   </ion-card>
-
-
-
-    <ion-card>
-        <img src="../../assets/imgs/kolonial_bil.jpg"/>
-        <div class="card-title">La oss ta panten din!</div>
-        <div class="card-subtitle"></div>
-    </ion-card>
+  
 
     <ion-card>
         <img src="../../assets/imgs/steak.jpg"/>
-        <div class="card-title">Alle grilloppskriftene!</div>
+        <div class="card-title"></div>
         <div class="card-subtitle"></div>
     </ion-card>
 
@@ -56,10 +57,10 @@
   <ion-toolbar>
     <ion-segment>
       <ion-segment-button (click)="goToHome()"><ion-icon name="home" class="icon"></ion-icon></ion-segment-button>
-      <ion-segment-button (click)="goToMakeList()"><ion-icon name="create" class="icon"></ion-icon>
+      <ion-segment-button (click)="goToMakeList()"><ion-icon name="people" class="icon"></ion-icon>
     </ion-segment-button>
       <ion-segment-button (click)="goToBasket()"><ion-icon name="cart" class="icon"></ion-icon></ion-segment-button>
-      <ion-segment-button (click)="goToProfil()"><ion-icon name="contact" class="icon"></ion-icon></ion-segment-button>
+      <ion-segment-button (click)="goToProfil()"><ion-icon name="card" class="icon"></ion-icon></ion-segment-button>
     </ion-segment>
   </ion-toolbar>
 </ion-footer>

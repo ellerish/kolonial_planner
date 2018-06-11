@@ -66,8 +66,10 @@ export class FriendListPage {
   }
 
 
-  goToBasketList() {
-    this.navCtrl.push('BasketPage');
+  goToBasketList(nameBasket) {
+    this.navCtrl.push('BasketPage', {
+      data: nameBasket
+    });
   }
 
   goToMakeList(){

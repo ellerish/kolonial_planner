@@ -82,7 +82,7 @@
     block
     margin-top
     text-center
-    [disabled]="!form.valid" (click)="goToBasketList()"  class="btnKlar">Klar</button>
+    [disabled]="!form.valid" (click)="goToBasketList(nameBasket.value)"  class="btnKlar">Klar</button>
 </form>
 </ion-card>
 
@@ -93,9 +93,9 @@
   <ion-toolbar>
     <ion-segment>
       <ion-segment-button (click)="goToHome()"><ion-icon name="home" class="icon"></ion-icon></ion-segment-button>
-      <ion-segment-button (click)="goToMakeList()"><ion-icon name="create"></ion-icon></ion-segment-button>
+      <ion-segment-button (click)="goToMakeList()"><ion-icon name="people"></ion-icon></ion-segment-button>
       <ion-segment-button (click)="goToBasket(nameBasket.value)"><ion-icon name="cart"></ion-icon></ion-segment-button>
-      <ion-segment-button (click)="goToProfil(nameBasket.value)"><ion-icon name="contact"></ion-icon></ion-segment-button>
+      <ion-segment-button (click)="goToProfil(nameBasket.value)"><ion-icon name="card"></ion-icon></ion-segment-button>
     </ion-segment>
   </ion-toolbar>
 </ion-footer>

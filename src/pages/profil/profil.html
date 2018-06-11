@@ -7,6 +7,7 @@
 <ion-header>
 
   <ion-navbar>
+    Betaling
     <ion-buttons end>
       <button icon-only ion-button (click)="logout()">
         <ion-icon name="exit"></ion-icon>
@@ -108,9 +109,9 @@
       <h2>Grillribs</h2>
       <p> Pris 89,90 kr</p>
       <p> 800 g </p>
-      <ion-icon item-right name="remove-circle" (click)="increment()" class="countButtons"></ion-icon>
+      <ion-icon item-right name="remove-circle"  class="countButtons"></ion-icon>
       <p item-right>2</p>
-      <ion-icon item-right name="add-circle" (click)="decrement()" class="countButtons"></ion-icon>
+      <ion-icon item-right name="add-circle"  class="countButtons"></ion-icon>
       <ion-icon item-end name="trash" (click)="emptyBasket()"></ion-icon>
     </ion-item>
     <p>Sum: Kr 179,80 + Felles: 29,83 = 209,63,- </p>
@@ -132,9 +133,9 @@
       <h2>Corona</h2>
       <p> Pris 40,90 kr</p>
       <p>0,33 l </p>
-      <ion-icon item-right name="remove-circle" (click)="increment()" class="countButtons"></ion-icon>
+      <ion-icon item-right name="remove-circle"  class="countButtons"></ion-icon>
       <p item-right>10</p>
-      <ion-icon item-right name="add-circle" (click)="decrement()" class="countButtons"></ion-icon>
+      <ion-icon item-right name="add-circle" class="countButtons"></ion-icon>
       <ion-icon item-end name="trash" (click)="emptyBasket()"></ion-icon>
     </ion-item>
 
@@ -145,9 +146,9 @@
       <h2>Lomper</h2>
       <p> Pris 12,90 kr</p>
       <p>260 g</p>
-      <ion-icon item-right name="remove-circle" (click)="increment()" class="countButtons"></ion-icon>
+      <ion-icon item-right name="remove-circle"  class="countButtons"></ion-icon>
       <p item-right>2</p>
-      <ion-icon item-right name="add-circle" (click)="decrement()" class="countButtons"></ion-icon>
+      <ion-icon item-right name="add-circle"  class="countButtons"></ion-icon>
       <ion-icon item-end name="trash" (click)="emptyBasket()"></ion-icon>
     </ion-item>
     <ion-item class="line">
@@ -157,9 +158,9 @@
       <h2>Scampi</h2>
       <p> Pris 59,90 kr</p>
       <p>270 g</p>
-      <ion-icon item-right name="remove-circle" (click)="increment()" class="countButtons"></ion-icon>
+      <ion-icon item-right name="remove-circle"  class="countButtons"></ion-icon>
       <p item-right>1</p>
-      <ion-icon item-right name="add-circle" (click)="decrement()" class="countButtons"></ion-icon>
+      <ion-icon item-right name="add-circle" class="countButtons"></ion-icon>
       <ion-icon item-end name="trash" (click)="emptyBasket()"></ion-icon>
     </ion-item>
     <p>Sum: kr 494,70 + Felles: 29,83 = 524,53,- </p>
@@ -186,9 +187,9 @@
   <ion-toolbar>
     <ion-segment>
       <ion-segment-button (click)="goToHome()"><ion-icon name="home"></ion-icon></ion-segment-button>
-      <ion-segment-button (click)="goToMakeList()"><ion-icon name="create"></ion-icon></ion-segment-button>
+      <ion-segment-button (click)="goToMakeList()"><ion-icon name="people"></ion-icon></ion-segment-button>
       <ion-segment-button (click)="goToBasket(nameBasket)"><ion-icon name="cart"></ion-icon></ion-segment-button>
-      <ion-segment-button (click)="goToProfil(nameBasket)"><ion-icon name="contact"></ion-icon></ion-segment-button>
+      <ion-segment-button (click)="goToProfil(nameBasket)"><ion-icon name="card"></ion-icon></ion-segment-button>
     </ion-segment>
   </ion-toolbar>
 </ion-footer>
