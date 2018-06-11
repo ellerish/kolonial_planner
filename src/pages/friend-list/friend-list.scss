@@ -7,20 +7,22 @@ page-friend-list {
   }
 
   .container {
-    background: orange;
+    border: 2px solid #222222;
+    border-radius: 1px;
  }
 
 
  .email {
    font-size: 25px;
-   color: white;
-   background: orange;
+   border-bottom: 1px solid #222222 !important;
+  // color: white;
+  // background: orange;
    font-weight: bold;
  }
 
  .navn-handleliste {
    font-size: 22px;
-   background-color: orange;
+ //  background-color: orange;
    color: black;
    font-family: "GT Walsheim Medium Oblique", sans-serif;
  }
@@ -41,7 +43,7 @@ page-friend-list {
 
  .add-email {
    font-size: 25px;
-   background-color: orange;
+  // background-color: orange;
  }
 
 
