@@ -38,6 +38,7 @@ export class DetailPage {
   //Navnet på handlelisten
   nameBasket: string;
 
+  show = false;
   public vareRef:firebase.database.Reference;
   public loadedVareList:Array<any>;
   public vareList:Array<any>;
@@ -67,6 +68,8 @@ export class DetailPage {
 
 
   }
+
+
 
   initItems(): void{
     this.vareList = this.loadedVareList;

@@ -36,7 +36,7 @@ export class CartServiceProvider {
     }
   }
 
-  //Ta vekk vare anall fra handlekurven
+  //Ta vekk vareantall fra handlekurven
   removeFromCart(product: Items) {
     var addedItem = CART_ITEM_LIST.find(
       t => t.product == product
